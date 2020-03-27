@@ -46,7 +46,7 @@ module.exports = {
     connection: {
       host: config.dbhost,
       database: config.dbname,
-      user:     config.dbname,
+      user:     config.dbuser,
       password: config.dbpwd
     },
     pool: {
