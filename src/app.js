@@ -7,9 +7,8 @@ const app = express()
 
 app.use(cors()) // prod: origin: http://meuapp.com
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*")
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-    next()
+    res.set('X-XSS-Protection', 0);
+    next();
 })
 app.use(express.json())
 app.use(routes)
