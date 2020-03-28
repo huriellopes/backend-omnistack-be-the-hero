@@ -5,7 +5,9 @@ const routes = require('./routes')
 
 const app = express()
 
-app.use(cors()) // prod: origin: http://meuapp.com
+app.use(cors({
+    strictSSL: false,
+})) // prod: origin: http://meuapp.com
 app.use(express.json())
 app.use(routes)
 app.use(errors())
