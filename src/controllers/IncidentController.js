@@ -5,6 +5,7 @@ module.exports = {
         const { page = 1 } = req.query
         
         const [count] = await connection('incidents').count()
+        const total = count['count(*)'] || count['count']
 
         const incidents = await connection('incidents')
             .join('ongs', 'incidents.ong_id', '=', 'ongs.id')
@@ -19,7 +20,7 @@ module.exports = {
                 'ongs.uf'
             ])
 
-        resp.header('X-Total-Count', count['count(*)'])
+        resp.header('X-Total-Count', count[total])
 
         return resp.json(incidents)
     },
