@@ -20,7 +20,6 @@ module.exports = {
             ])
 
         resp.header('X-Total-Count', count['count(*)'])
-        resp.header('Access-Control-Expose-Headers', 'X-Total-Count')
 
         return resp.json(incidents)
     },
