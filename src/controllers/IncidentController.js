@@ -20,7 +20,7 @@ module.exports = {
                 'ongs.uf'
             ])
 
-        resp.header('X-Total-Count', count[total])
+        resp.header('X-Total-Count', total)
 
         return resp.json(incidents)
     },
