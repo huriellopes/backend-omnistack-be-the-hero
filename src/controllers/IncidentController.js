@@ -19,10 +19,10 @@ module.exports = {
                 'ongs.uf'
             ])
 
-        return resp.json({
-            length: count['count(*)'],
-            data: incidents
-          });
+            return resp.json({
+                length: count['count(*)'],
+                data: incidents
+            });
     },
 
     async create (req, resp) {
